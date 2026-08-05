@@ -1,0 +1,72 @@
+.footer {
+  margin-top: 6rem;
+  border-top: 1px solid var(--line);
+  background: var(--cream-deep);
+}
+
+.top {
+  display: grid;
+  gap: 2.5rem;
+  padding-block: 3.5rem;
+}
+
+.brandCol {
+  max-width: 24rem;
+}
+
+.tagline {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--ink-500);
+}
+
+.colTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+.list {
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--ink-500);
+}
+
+.list a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list a:hover {
+  color: var(--ink-900);
+}
+
+.bottom {
+  border-top: 1px solid var(--line);
+}
+
+.bottomInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-block: 1.25rem;
+  font-size: 0.75rem;
+  color: var(--ink-500);
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .top {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}

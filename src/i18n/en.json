@@ -1,0 +1,139 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "franchise": "Franchise",
+    "locations": "Locations",
+    "about": "About",
+    "orderNow": "Order now",
+    "skipToContent": "Skip to content",
+    "switchLanguage": "العربية"
+  },
+  "home": {
+    "eyebrow": "Fresh fruit tea, now in Riyadh",
+    "title": "Real fruit. Real tea. Buckets of it.",
+    "lede": "TIANLALA brews fresh fruit tea, boba milk tea and soft-serve sundaes daily. Over 8,000 stores worldwide, and our first Saudi store is now open in Riyadh.",
+    "ctaMenu": "See the menu",
+    "ctaFranchise": "Franchise with us",
+    "bestSellersTitle": "Best sellers",
+    "bestSellersLede": "The three everyone orders first.",
+    "viewFullMenu": "View the full menu",
+    "storyTitle": "A tea brand built on fresh fruit",
+    "storyBody": "Founded in 2015, TIANLALA grew into a global fruit tea brand by refusing shortcuts: real fruit, cut fresh, never concentrate. From a Singapore operations hub the brand now serves Southeast Asia and the Gulf, and Riyadh is the newest chapter.",
+    "statStores": "stores worldwide",
+    "statCountries": "countries",
+    "statFounded": "brewing since",
+    "franchiseTeaser": "Bring TIANLALA to your city",
+    "franchiseTeaserBody": "We are opening franchise territories across the Kingdom.",
+    "franchiseTeaserCta": "Start your application"
+  },
+  "menu": {
+    "title": "Menu",
+    "lede": "Every drink is made to order. Calorie values are listed per serving, and all prices include VAT.",
+    "all": "All",
+    "calories": "cal",
+    "currency": "SAR",
+    "vatNote": "All prices include 15% VAT.",
+    "caloriesNote": "Calorie values are shown per standard serving.",
+    "priceDisclaimer": "Menu and prices are being confirmed with our Riyadh store and may change.",
+    "empty": "Nothing in this category yet.",
+    "itemCount": "{count} drinks"
+  },
+  "franchise": {
+    "title": "Franchise with TIANLALA",
+    "lede": "We are selecting partners for new territories across Saudi Arabia. Tell us where you want to open and our team will be in touch.",
+    "whyTitle": "Why partner with us",
+    "why": [
+      {
+        "title": "A proven global brand",
+        "body": "More than 8,000 stores across five countries, with a product range already tested in dozens of markets."
+      },
+      {
+        "title": "Full operational support",
+        "body": "Store design, equipment, staff training, supply chain and marketing are handled through our regional operations centre."
+      },
+      {
+        "title": "A compact footprint",
+        "body": "Our format works in malls, high streets and kiosks, so you can start without a large-format lease."
+      }
+    ],
+    "packageTitle": "Investment details",
+    "packageTodo": "Franchise package details, investment range and inclusions are being finalised. Submit the form and our team will send the current pack.",
+    "formTitle": "Register your interest",
+    "form": {
+      "name": "Full name",
+      "namePlaceholder": "Your full name",
+      "phone": "Phone number",
+      "phonePlaceholder": "05X XXX XXXX",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "city": "Preferred city or district",
+      "cityPlaceholder": "e.g. Riyadh, Al Olaya",
+      "message": "Anything else we should know",
+      "messagePlaceholder": "Optional",
+      "submit": "Submit application",
+      "submitting": "Submitting…",
+      "required": "required",
+      "successTitle": "Thank you.",
+      "successBody": "Your application has reached our franchise team. We will be in touch shortly.",
+      "errorGeneric": "Something went wrong. Please try again, or contact us directly.",
+      "errorName": "Please enter your name.",
+      "errorPhone": "Please enter a valid phone number.",
+      "errorEmail": "Please enter a valid email address.",
+      "errorCity": "Please tell us your preferred city or district."
+    }
+  },
+  "locations": {
+    "title": "Find a store",
+    "lede": "Our first Saudi store is open in Riyadh, with more opening across the Kingdom.",
+    "orderDelivery": "Order for delivery",
+    "getDirections": "Get directions",
+    "addressPending": "Full address confirming",
+    "hoursPending": "Opening hours confirming",
+    "moreSoon": "More stores are opening across the Kingdom."
+  },
+  "about": {
+    "title": "About TIANLALA",
+    "lede": "A global fruit tea brand, brewing fresh since 2015.",
+    "storyTitle": "Our story",
+    "story": [
+      "TIANLALA began in 2015 with one idea: fruit tea should taste like fruit. Not syrup, not concentrate — fruit cut fresh in store, every day.",
+      "That standard turned a single shop into a global brand of more than 8,000 stores. In 2023 the group opened a Singapore operations centre to serve markets beyond China, bringing together supply chain, R&D, training and brand teams under one roof.",
+      "Riyadh is the newest chapter. Same fruit, same standard, brewed for the Kingdom."
+    ],
+    "valuesTitle": "What we hold to",
+    "values": [
+      {
+        "title": "Fresh, never concentrate",
+        "body": "Fruit is cut in store. If it is not good enough to eat, it does not go in a cup."
+      },
+      {
+        "title": "Priced to be a habit",
+        "body": "A drink you can afford more than once a week, without cutting the quality."
+      },
+      {
+        "title": "Made in front of you",
+        "body": "Open bars, visible prep, and calorie counts on every item."
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "That page does not exist. It may have moved, or the link may be wrong.",
+    "cta": "Back to home"
+  },
+  "footer": {
+    "tagline": "Fresh fruit tea, brewed daily.",
+    "explore": "Explore",
+    "contact": "Contact",
+    "follow": "Follow",
+    "orderOn": "Order on HungerStation",
+    "rights": "All rights reserved.",
+    "pending": "Confirming",
+    "phonePending": "Contact number confirming",
+    "emailPending": "Email confirming"
+  },
+  "common": {
+    "todo": "To be confirmed"
+  }
+}

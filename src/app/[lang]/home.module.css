@@ -1,0 +1,147 @@
+.section {
+  padding-block: 4rem;
+}
+
+.sectionHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+}
+
+.sectionLede {
+  margin-top: 0.5rem;
+  color: var(--ink-500);
+}
+
+.moreLink {
+  font-weight: 700;
+  color: var(--ink-900);
+  text-decoration: underline;
+  text-decoration-color: var(--brand-500);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 4px;
+}
+
+.moreLink:hover {
+  text-decoration-color: var(--ink-900);
+}
+
+.bestSellers {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* Story ------------------------------------------------------------------- */
+
+.story {
+  background: var(--cream-deep);
+  padding-block: 4rem;
+}
+
+.storyInner {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.storyBody {
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+  color: var(--ink-700);
+}
+
+.values {
+  display: grid;
+  gap: 1rem;
+}
+
+.value {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-card);
+  background: var(--white);
+  padding: 1.5rem;
+}
+
+.valueTitle {
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+.valueBody {
+  margin-top: 0.5rem;
+  color: var(--ink-500);
+}
+
+/* Franchise call to action ------------------------------------------------ */
+
+.cta {
+  border-radius: var(--radius-card);
+  background: var(--ink-900);
+  padding: 3.5rem 2rem;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  color: var(--cream);
+}
+
+.ctaBody {
+  margin-inline: auto;
+  margin-top: 1rem;
+  max-width: 32rem;
+  color: var(--ink-300);
+}
+
+.ctaButton {
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .section,
+  .story {
+    padding-block: 5rem;
+  }
+  .bestSellers {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .cta {
+    padding-inline: 4rem;
+  }
+}
+
+/*
+ * The story runs full width below 1024px, so the cards can sit side by side —
+ * but only from 900px. At 768px three columns leaves ~174px of text each,
+ * which is too narrow for Arabic in particular (about 16 characters a line).
+ */
+@media (min-width: 900px) and (max-width: 1023px) {
+  .values {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/*
+ * From 1024px the story splits into two columns, which leaves the cards in
+ * roughly half the container. Three columns inside that is about 180px each
+ * and wraps the text to one word per line, so they stack into a list instead.
+ */
+@media (min-width: 1024px) {
+  .storyInner {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+  .values {
+    grid-template-columns: 1fr;
+  }
+}

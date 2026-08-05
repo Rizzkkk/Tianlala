@@ -1,0 +1,148 @@
+.card {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-card);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.media img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .media img {
+  transform: scale(1.04);
+}
+
+/* Tier 2: the name is the artwork ---------------------------------------- */
+
+.board {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.boardCategory {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  opacity: 0.7;
+}
+
+.boardName {
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.boardNameLong {
+  font-size: 1.125rem;
+}
+.boardNameMedium {
+  font-size: 1.25rem;
+}
+.boardNameShort {
+  font-size: 1.5rem;
+}
+
+.boardRule {
+  display: block;
+  height: 4px;
+  width: 2.5rem;
+  border-radius: var(--radius-pill);
+}
+
+.badge {
+  position: absolute;
+  top: 0.75rem;
+  inset-inline-start: 0.75rem;
+  border-radius: var(--radius-pill);
+  background: var(--ink-900);
+  padding: 0.25rem 0.6rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brand-300);
+}
+
+/* Footer — fixed height so both tiers align across a mixed grid ----------- */
+
+.body {
+  display: flex;
+  height: 4.75rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.125rem;
+  padding-inline: 1rem;
+}
+
+.name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--ink-900);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--ink-900);
+}
+
+.currency {
+  margin-inline-start: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ink-500);
+}
+
+.calories {
+  font-size: 0.75rem;
+  color: var(--ink-500);
+}
+
+@media (min-width: 768px) {
+  .board {
+    padding: 1.25rem;
+  }
+  .boardNameLong {
+    font-size: 1.25rem;
+  }
+  .boardNameMedium {
+    font-size: 1.5rem;
+  }
+  .boardNameShort {
+    font-size: 1.875rem;
+  }
+}

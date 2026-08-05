@@ -1,0 +1,210 @@
+/* Shared by the inner pages: menu, franchise, locations, about, 404. */
+
+.page {
+  padding-block: 3rem 4rem;
+}
+
+.notes {
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.5rem;
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  color: var(--ink-500);
+}
+
+.notesMuted {
+  color: var(--ink-300);
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ink-900);
+}
+
+/* Franchise --------------------------------------------------------------- */
+
+.franchiseGrid {
+  margin-top: 3.5rem;
+  display: grid;
+  gap: 3.5rem;
+}
+
+.reasons {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.reason {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-card);
+  background: var(--white);
+  padding: 1.5rem;
+}
+
+.reasonTitle {
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+.reasonBody {
+  margin-top: 0.5rem;
+  color: var(--ink-500);
+}
+
+.packageNote {
+  margin-top: 1rem;
+  border: 1px dashed rgba(23, 19, 13, 0.2);
+  border-radius: var(--radius-card);
+  background: var(--cream-deep);
+  padding: 1.5rem;
+  color: var(--ink-500);
+}
+
+.formPanel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--cream-deep);
+  padding: 1.5rem;
+}
+
+.formPanelInner {
+  margin-top: 1.5rem;
+}
+
+/* Locations --------------------------------------------------------------- */
+
+.branches {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.branch {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-card);
+  background: var(--white);
+  padding: 1.5rem;
+}
+
+.branchName {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink-900);
+}
+
+.branchDistrict {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink-500);
+}
+
+.branchDetail {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--ink-500);
+}
+
+.branchActions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.branchActions .btn {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.moreSoon {
+  margin-top: 2.5rem;
+  color: var(--ink-500);
+}
+
+/* About ------------------------------------------------------------------- */
+
+.prose {
+  margin-top: 3.5rem;
+  max-width: 42rem;
+}
+
+.proseBody {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1rem;
+  font-size: 1.125rem;
+  color: var(--ink-700);
+}
+
+.valuesSection {
+  margin-top: 4rem;
+}
+
+.values {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* 404 --------------------------------------------------------------------- */
+
+.notFound {
+  display: flex;
+  min-height: 60vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 5rem;
+  text-align: center;
+}
+
+.notFoundCode {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: var(--brand-500);
+}
+
+.notFoundTitle {
+  margin-top: 1rem;
+  font-size: 1.875rem;
+  font-weight: 800;
+}
+
+.notFoundBody {
+  margin-top: 0.75rem;
+  max-width: 28rem;
+  color: var(--ink-500);
+}
+
+.notFoundCta {
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .branches,
+  .values {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .formPanel {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .franchiseGrid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 5rem;
+  }
+  .formPanel {
+    position: sticky;
+    top: 5.5rem;
+    align-self: start;
+  }
+}

@@ -1,0 +1,119 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 252, 243, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.bar {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+/* Desktop navigation ------------------------------------------------------ */
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.navLink {
+  display: block;
+  border-radius: var(--radius-pill);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-700);
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.navLink:hover {
+  background: var(--brand-100);
+}
+
+.navLinkActive {
+  background: var(--brand-300);
+  color: var(--ink-900);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.langSwitch {
+  border: 1px solid rgba(23, 19, 13, 0.15);
+  border-radius: var(--radius-pill);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink-700);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.langSwitch:hover {
+  background: var(--brand-100);
+}
+
+/* Mobile ------------------------------------------------------------------ */
+
+.burger {
+  display: inline-flex;
+  border: 0;
+  background: none;
+  padding: 0.5rem;
+  border-radius: 10px;
+  color: var(--ink-900);
+}
+
+.burgerIcon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.mobileNav {
+  display: grid;
+  gap: 0.25rem;
+  border-top: 1px solid var(--line);
+  padding-block: 0.5rem 1rem;
+}
+
+.mobileLink {
+  display: block;
+  border-radius: 12px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink-700);
+  text-decoration: none;
+}
+
+.mobileLinkActive {
+  background: var(--brand-300);
+  color: var(--ink-900);
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+  .burger,
+  .mobileNav {
+    display: none;
+  }
+}

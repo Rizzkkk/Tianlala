@@ -1,0 +1,77 @@
+/*
+ * The filter row scrolls horizontally on narrow screens. The negative inline
+ * margin lets it bleed to the screen edge so the last pill is visibly clipped,
+ * which signals that it scrolls.
+ */
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  margin-inline: calc(var(--gutter) * -1);
+  padding-inline: var(--gutter);
+  padding-bottom: 0.5rem;
+}
+
+.filter {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border: 1px solid rgba(23, 19, 13, 0.15);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink-700);
+  white-space: nowrap;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.filter:hover {
+  border-color: rgba(23, 19, 13, 0.35);
+}
+
+.filterActive {
+  border-color: var(--ink-900);
+  background: var(--ink-900);
+  color: var(--cream);
+}
+
+.count {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--ink-500);
+}
+
+.grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.empty {
+  margin-top: 2.5rem;
+  color: var(--ink-500);
+}
+
+@media (min-width: 768px) {
+  .filters {
+    flex-wrap: wrap;
+    margin-inline: 0;
+    padding-inline: 0;
+    overflow-x: visible;
+  }
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

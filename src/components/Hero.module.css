@@ -1,0 +1,187 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--brand-300);
+}
+
+/* Soft light source behind the cups, for depth. */
+.glow {
+  pointer-events: none;
+  position: absolute;
+  inset-inline-end: -10%;
+  top: -20%;
+  height: 40rem;
+  width: 40rem;
+  border-radius: 50%;
+  background: var(--brand-100);
+  opacity: 0.55;
+  filter: blur(70px);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+  padding-block: 3rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(42, 35, 26, 0.7);
+}
+
+.title {
+  margin-top: 1rem;
+  font-size: clamp(2.5rem, 7vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.02;
+  color: var(--ink-900);
+}
+
+.lede {
+  margin-top: 1.25rem;
+  max-width: 32rem;
+  font-size: 1rem;
+  color: var(--ink-800);
+}
+
+.ctas {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/*
+ * Three equal columns rather than flex-wrap: with three short values, wrapping
+ * leaves a lopsided 2 + 1 on narrow screens. Labels wrap inside their column
+ * instead.
+ */
+.stats {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  border-top: 1px solid rgba(23, 19, 13, 0.15);
+  padding-top: 1.5rem;
+}
+
+.statValue {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ink-900);
+}
+
+.statLabel {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(42, 35, 26, 0.7);
+}
+
+/* Product cluster --------------------------------------------------------- */
+
+.cluster {
+  position: relative;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 26rem;
+  aspect-ratio: 1;
+}
+
+/*
+ * The cluster mirrors for Arabic so the composition sits on the correct side,
+ * but each cup is un-mirrored so the photography is never flipped.
+ */
+[dir="rtl"] .cluster {
+  transform: scaleX(-1);
+}
+
+.cup {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+[dir="rtl"] .cup {
+  transform: scaleX(-1);
+}
+
+.cup img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/*
+ * A triangle: the two buckets sit back and apart, the sundae comes forward
+ * between them. Each cup keeps clear air on at least one edge so none of the
+ * three reads as accidentally hidden.
+ */
+.cupA {
+  z-index: 2;
+  width: 48%;
+  inset-inline-start: 0;
+  top: 6%;
+  rotate: -6deg;
+  box-shadow: 0 24px 50px -12px rgba(23, 19, 13, 0.45);
+}
+
+.cupB {
+  z-index: 1;
+  width: 44%;
+  inset-inline-end: 2%;
+  top: 0;
+  rotate: 7deg;
+  box-shadow: 0 20px 44px -14px rgba(23, 19, 13, 0.4);
+}
+
+.cupC {
+  z-index: 3;
+  width: 36%;
+  inset-inline-end: 12%;
+  bottom: -4%;
+  rotate: -3deg;
+  box-shadow: 0 22px 44px -12px rgba(23, 19, 13, 0.45);
+}
+
+.wave {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  color: var(--cream);
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 2rem;
+    padding-block: 5rem;
+  }
+
+  .lede {
+    font-size: 1.125rem;
+  }
+
+  /*
+   * Wider than tall on desktop. A square cluster is taller than the copy
+   * column, which left a band of empty yellow above the wave.
+   */
+  .cluster {
+    max-width: none;
+    aspect-ratio: 1.15;
+  }
+
+  .stats {
+    max-width: 30rem;
+  }
+}

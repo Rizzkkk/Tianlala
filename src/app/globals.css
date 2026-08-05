@@ -1,26 +1,272 @@
-@import "tailwindcss";
+/* =========================================================================
+   TIANLALA — global stylesheet
+   Design tokens, reset, base typography, and the few primitives shared
+   across pages. Everything else lives in a *.module.css next to its
+   component.
+
+   RTL: layout always uses logical properties (padding-inline, inset-inline,
+   text-align: start). Never use left/right for layout, or Arabic breaks.
+   ========================================================================= */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand — from the TIANLALA mark and the wave motif on the group site */
+  --brand-100: #fff8d9;
+  --brand-200: #ffefa8;
+  --brand-300: #fee256;
+  --brand-400: #f8da34;
+  --brand-500: #f5d01e;
+  --brand-600: #d9b40a;
+
+  --ink-900: #17130d;
+  --ink-800: #2a231a;
+  --ink-700: #453a2c;
+  --ink-500: #6b5c48;
+  --ink-300: #a0917c;
+
+  --cream: #fffcf3;
+  --cream-deep: #fdf6e3;
+  --white: #ffffff;
+  --danger: #b42318;
+
+  --line: rgba(23, 19, 13, 0.1);
+  --line-soft: rgba(23, 19, 13, 0.08);
+
+  --radius-card: 20px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(23, 19, 13, 0.04);
+  --shadow-md: 0 8px 24px rgba(23, 19, 13, 0.09);
+
+  --container: 80rem;
+  --gutter: 1.25rem;
+
+  --font-latin: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-arabic: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-body: var(--font-latin), var(--font-arabic), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (min-width: 768px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --gutter: 2rem;
   }
 }
 
+/* Arabic leads with the Arabic face and needs slightly more line height. */
+:lang(ar) {
+  --font-body: var(--font-arabic), var(--font-latin), sans-serif;
+}
+
+:lang(ar) body {
+  font-size: 1.03em;
+  line-height: 1.85;
+}
+
+/* --- Reset ------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cream);
+  color: var(--ink-900);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ink-900);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --- Shared primitives -------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.main {
+  flex: 1;
+}
+
+/* Prices and calorie figures line up in a grid when tabular. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skipLink {
+  position: absolute;
+  inset-inline-start: 0.75rem;
+  top: -100px;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  background: var(--ink-900);
+  color: var(--cream);
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skipLink:focus {
+  top: 0.75rem;
+}
+
+/* Buttons ---------------------------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  border: 2px solid transparent;
+  border-radius: var(--radius-pill);
+  padding: 0.85rem 1.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.btnPrimary {
+  background: var(--ink-900);
+  color: var(--cream);
+}
+
+.btnPrimary:hover {
+  transform: scale(1.03);
+}
+
+.btnOutline {
+  border-color: var(--ink-900);
+  color: var(--ink-900);
+}
+
+.btnOutline:hover {
+  background: var(--ink-900);
+  color: var(--cream);
+}
+
+.btnBrand {
+  background: var(--brand-500);
+  color: var(--ink-900);
+}
+
+.btnBrand:hover {
+  transform: scale(1.03);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Page header block, shared by the inner pages ---------------------------- */
+
+.pageHead {
+  max-width: 42rem;
+  padding-block: 3rem 0;
+}
+
+.pageHead h1 {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: 800;
+}
+
+.pageHead p {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: var(--ink-500);
+}
+
+/* A value that is still a placeholder, e.g. an unconfirmed phone number. */
+.pending {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  background: rgba(23, 19, 13, 0.05);
+  padding: 0.15rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ink-500);
 }
