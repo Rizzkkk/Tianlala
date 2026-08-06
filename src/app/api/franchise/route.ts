@@ -116,12 +116,25 @@ export async function POST(request: Request) {
   const from = process.env.FRANCHISE_FROM ?? "TIANLALA <onboarding@resend.dev>";
 
   if (!apiKey || !inbox) {
-    // Never drop a lead silently. Without mail configured this is a server
-    // misconfiguration, so the visitor sees an error and is asked to retry.
-    console.error(
-      "[franchise] RESEND_API_KEY or FRANCHISE_INBOX is not set; lead not delivered",
+    /*
+     * Demo mode: no mail provider configured yet.
+     *
+     * The form completes so the site is demoable without any third-party
+     * signup, but the lead is NOT delivered anywhere. Only the requested area
+     * is logged — never the name, phone or email.
+     *
+     * `delivered: false` in the response keeps the API honest about what
+     * actually happened.
+     *
+     * BEFORE REAL TRAFFIC: set RESEND_API_KEY and FRANCHISE_INBOX. Until then
+     * every enquiry submitted here is lost.
+     */
+    console.warn(
+      "[franchise] DEMO MODE — mail is not configured, so this lead was accepted but NOT delivered. " +
+        "Set RESEND_API_KEY and FRANCHISE_INBOX to start receiving enquiries.",
     );
-    return NextResponse.json({ error: "not_configured" }, { status: 500 });
+    console.warn(`[franchise] lead received for area: ${city}`);
+    return NextResponse.json({ ok: true, delivered: false });
   }
 
   const rows: [string, string][] = [

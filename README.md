@@ -86,8 +86,14 @@ a 20 req/min burst guard, and a 3-per-10-min cap on *accepted* leads —
 validation failures deliberately do not count, so typos never lock out a real
 applicant. No personal data is ever written to logs.
 
-With `RESEND_API_KEY` / `FRANCHISE_INBOX` unset it returns HTTP 500 and the
-visitor is asked to retry. A lead is never silently dropped.
+**Demo mode.** With `RESEND_API_KEY` / `FRANCHISE_INBOX` unset the form still
+completes, so the site can be deployed and demoed with no third-party signup.
+The lead is **not delivered anywhere** — the response says `delivered: false`
+and the server logs a warning plus the requested area only, never the name,
+phone or email.
+
+> Set both variables before the site takes real traffic. Until you do, every
+> enquiry submitted is lost.
 
 ## Deploying to the Hostinger VPS
 
@@ -132,6 +138,8 @@ Then `certbot --nginx -d tianlala.sa -d www.tianlala.sa` for TLS.
 Every item below renders as a visible "confirming" chip rather than invented
 content, so nothing false can ship. Fill them in `src/data/site.ts`.
 
+- [ ] **Set `RESEND_API_KEY` and `FRANCHISE_INBOX`.** Without them the form is
+      in demo mode and leads go nowhere.
 - [ ] Brand sign-off on all 33 prices and calorie figures. They came from the
       HungerStation listing, **not** from the brand. Calorie display is subject
       to SFDA menu labelling rules.
